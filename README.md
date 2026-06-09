@@ -1,73 +1,57 @@
-# React + TypeScript + Vite
+# Git Commit Changelog Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, fast, and beautiful web application built with React and Vite that automatically generates markdown changelogs from raw git commit logs. It automatically recognizes Conventional Commits, filters them, and formats them into a ready-to-copy Markdown output.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **🚀 Conventional Commits Parsing:** Automatically recognizes `feat`, `fix`, `chore`, `docs`, `style`, `refactor`, `perf`, `test`, `build`, and `ci` prefixes.
+- **✨ Premium UI:** A stunning dark mode interface utilizing glassmorphism and subtle animations for a professional developer experience.
+- **⚙️ Customization:** Interactive settings to configure whether to group by commit type, include commit hashes, or ignore specific commit types.
+- **📋 One-Click Copy:** Easily copy the beautifully formatted Markdown changelog directly to your clipboard.
+- **⚡ Fast:** Runs completely locally in your browser, built on Vite for lightning-fast development.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework:** React + TypeScript
+- **Bundler:** Vite
+- **Icons:** Lucide React
+- **Styling:** Vanilla CSS with custom modern design tokens and animations.
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Node.js (v16 or higher recommended)
+- npm or yarn
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Installation
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Shaurya8008/git-commit-changelog-generator.git
+   cd "git-commit-changelog-generator"
+   ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Install the dependencies:
+   ```bash
+   npm install
+   ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+4. Open `http://localhost:5173` in your browser.
+
+## How to use
+
+1. Open your terminal in any of your git repositories.
+2. Run a command like `git log --oneline` to get your raw git commit history.
+3. Paste the output into the text area in the web app.
+4. Tweak your desired settings (e.g. "Group by Type").
+5. Click **Copy Markdown** and paste it into your project's `CHANGELOG.md` file!
+
+## License
+
+This project is licensed under the MIT License.
